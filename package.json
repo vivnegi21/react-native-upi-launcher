@@ -1,7 +1,7 @@
 {
   "name": "react-native-upi-launcher",
   "version": "0.1.0",
-  "description": "A React Native library to launch UPI intent and fetch installed UPI apps on Android.",
+  "description": "A React Native library to launch UPI intent in app and fetch installed UPI apps on Android.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {

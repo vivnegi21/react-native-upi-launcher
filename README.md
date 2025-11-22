@@ -1,26 +1,41 @@
-# react-native-upi-launcher
+# 🚀 react-native-upi-launcher
 
-A React Native library to launch UPI intent and fetch installed UPI apps on Android.
+A lightweight **React Native Android library** to launch UPI payment intents and fetch installed UPI apps on the device.
 
-## Installation
+It supports:
 
+- Direct launch of a specific UPI app (PhonePe, GPay, Paytm, etc.)
+- Fallback to **Chooser** if no package is provided or if preferred app fails
+- Fetching list of installed UPI apps that support `upi://pay`
 
-```sh
+> ⚠️ Android-only — iOS will simply open the UPI URL using `Linking.openURL`.
+
+---
+
+## 📦 Installation
+
+````sh
 npm install react-native-upi-launcher
-```
+# or
+yarn add react-native-upi-launcher`
 
 
 ## Usage
 
 
 ```js
-import { multiply } from 'react-native-upi-launcher';
+import { fetchUpiApps, openUpiIntent } from "react-native-upi-launcher";
 
-// ...
+// Fetch installed UPI apps
+const apps = await fetchUpiApps();
+console.log(apps);
 
-const result = multiply(3, 7);
-```
-
+// Launch UPI payment — direct to a selected app
+await openUpiIntent(
+  "upi://pay?pa=test@upi&pn=Test User&am=1&cu=INR&tn=Test Payment",
+  "com.phonepe.app"
+);
+````
 
 ## Contributing
 
